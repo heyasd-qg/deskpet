@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>邦多利桌宠</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="pet-page">
+  <div id="toolbar">
+    <button id="lock-button" title="锁定显示与位置" aria-label="锁定显示与位置" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="3"></rect><path class="lock-shackle" d="M9 10V6a4 4 0 0 1 8 0"></path><path d="M12 14v3"></path></svg></button>
+    <button id="settings-button" title="设置">⚙</button>
+  </div>
+  <div id="bubble" role="status" aria-live="polite"></div>
+  <div id="drag-hint" aria-hidden="true">拖动人物可移动 · 点击播放台词</div>
+  <audio id="voice-player" preload="none"></audio>
+  <canvas id="stage" width="167" height="173" aria-label="角色桌宠"></canvas>
+  <div id="status">正在准备祥子…</div>
+  <script src="/live2dcubismcore.min.js"></script>
+  <script src="/vendor/pixi.min.js"></script>
+  <script src="/vendor/cubism4.min.js"></script><script src="/cubism-color-compat.js"></script>
+  <script src="/character-controls.js"></script>
+  <script src="/character-pet.js"></script>
+</body>
+</html>

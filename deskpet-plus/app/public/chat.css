@@ -1,0 +1,21 @@
+.chat-page { height: 100vh; background: #171326; color: #f7f3fd; }
+.chat-shell { height: 100%; display: flex; flex-direction: column; }
+.chat-header { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px 12px; border-bottom: 1px solid #3d3150; }
+.chat-header h1 { margin: 4px 0 0; font-size: 20px; }
+.chat-header button { border: 1px solid #685181; background: #30243e; color: #f7f3fd; border-radius: 8px; padding: 8px 10px; cursor: pointer; }
+.chat-messages { flex: 1; overflow-y: auto; padding: 18px 17px; display: flex; flex-direction: column; gap: 13px; }
+.chat-intro { color: #bdb2ca; font-size: 12px; line-height: 1.55; padding: 0 2px 9px; }
+.chat-message { max-width: 92%; padding: 11px 13px; border-radius: 12px; line-height: 1.6; font-size: 13px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.chat-message.user { align-self: flex-end; color: #f8f3ff; background: #563a72; }
+.chat-message.sakiko { align-self: flex-start; color: #f7f3fd; background: #30253f; border: 1px solid #544366; }
+.chat-suggestion { align-self: flex-start; max-width: 94%; border: 1px solid #6c5284; border-radius: 10px; padding: 10px; font-size: 12px; line-height: 1.5; }
+.chat-suggestion p { margin: 0 0 8px; }
+.chat-suggestion button { margin-right: 7px; padding: 6px 9px; border-radius: 7px; border: 1px solid #9173ae; background: #4c365f; color: #fff; cursor: pointer; }
+#chat-error { min-height: 0; color: #eec5c5; font-size: 11px; padding: 0 18px; }
+.chat-composer { border-top: 1px solid #3d3150; padding: 12px 15px 15px; }
+.chat-composer textarea { display: block; width: 100%; min-height: 70px; resize: vertical; max-height: 140px; border: 1px solid #67527e; border-radius: 10px; background: #281f36; color: #fff; padding: 10px; font: inherit; font-size: 13px; }
+.chat-actions { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-top: 9px; }
+.chat-actions span { margin-right: auto; color: #9688a7; font-size: 10px; }
+.chat-actions button { border: 0; border-radius: 8px; padding: 8px 13px; background: #cdaaf2; color: #241331; font-weight: 700; cursor: pointer; }
+.chat-actions #chat-stop { background: #594569; color: #fff; }
+.chat-actions button:disabled { opacity: .5; cursor: not-allowed; }

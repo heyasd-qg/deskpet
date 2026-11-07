@@ -1,0 +1,17 @@
+{
+  "name": "deskpet-plus",
+  "version": "0.9.2-beta.1",
+  "private": true,
+  "description": "Desktop companion framework with optional character resources and Live2D import",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "node build.cjs"
+  },
+  "devDependencies": {
+    "@electron/packager": "20.3.0",
+    "electron": "44.7.0",
+    "pixi-live2d-display": "0.4.0",
+    "pixi.js": "6.5.10"
+  }
+}

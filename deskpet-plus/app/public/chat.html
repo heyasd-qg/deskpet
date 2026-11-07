@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>与祥子聊天</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/chat.css">
+</head>
+<body class="chat-page">
+  <main class="chat-shell">
+    <header class="chat-header"><div><div class="section-kicker">SAKIKO</div><h1>与祥子聊天</h1></div><button type="button" id="chat-settings">聊天设置</button></header>
+    <div id="chat-messages" class="chat-messages" role="log" aria-live="polite">
+      <div class="chat-intro">你可以和祥子聊天，也可以说“记住：……”；重要信息会先征求你的确认。</div>
+    </div>
+    <div id="chat-error" role="status" aria-live="polite"></div>
+    <form id="chat-form" class="chat-composer">
+      <textarea id="chat-input" rows="3" maxlength="1200" placeholder="和祥子说点什么……" aria-label="输入消息"></textarea>
+      <div class="chat-actions"><span>Enter 发送 · Shift+Enter 换行</span><button type="button" id="chat-stop" hidden>停止</button><button type="submit" id="chat-send">发送</button></div>
+    </form>
+  </main>
+  <script src="/chat.js"></script>
+</body>
+</html>

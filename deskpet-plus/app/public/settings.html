@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>邦多利桌宠 · 设置</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="settings-page">
+  <main class="settings-shell">
+    <aside class="settings-sidebar">
+      <div class="eyebrow">BANDORI</div>
+      <div class="sidebar-title">桌宠设置</div>
+      <nav aria-label="设置分类">
+        <button class="workshop-nav" id="workshop-button"><span>✦</span> 角色工坊 · Beta</button>
+        <button class="nav-item active" data-page="character" aria-current="page"><span>♢</span> 角色设置</button>
+        <button class="nav-item" data-page="dual"><span>♧</span> 双人设置</button>
+        <button class="nav-item" data-page="system"><span>⚙</span> 系统设置</button>
+      </nav>
+      <div class="sidebar-footer">设置保存在本机</div>
+    </aside>
+    <section class="settings-content">
+      <div id="empty-library" class="preview-panel" hidden role="status"><h2>还没有可用角色</h2><p>程序已准备好。导入 Live2D 模型，预览成功后点击“放到桌面”即可开始。</p><button id="empty-library-import" type="button">导入角色</button></div>
+      <div class="settings-section" id="page-character">
+        <div class="section-kicker">CHARACTER</div>
+        <h1>角色设置</h1>
+        <p class="intro">先选择人物，再选择她的服装。</p>
+        <div class="field-block" id="preview-target-field" hidden><label class="field-title" for="preview-target">查看与预览哪一侧</label><select id="preview-target"><option value="left">左侧角色</option><option value="right">右侧角色</option></select></div>
+        <div class="field-block">
+          <label class="field-title" for="character-select">人物</label>
+          <select id="character-select" data-key="character" disabled><option>正在载入人物…</option></select>
+        </div>
+        <div class="field-block">
+          <label class="field-title" for="outfit-select">服装</label>
+          <select id="outfit-select" data-key="outfit" disabled><option>请先选择人物</option></select>
+        </div>
+        <label class="setting-row"><span><strong>平时佩戴面具</strong><small>当前服装支持时可开启</small></span><input type="checkbox" data-key="maskOn"></label>
+        <label class="setting-row"><span><strong>演奏时佩戴面具</strong><small>仅支持 Ave Mujica 的演奏模型</small></span><input type="checkbox" data-key="performanceMask"></label>
+        <p class="hint" id="performance-hint"></p><div class="hint" id="profile-status" role="status" aria-live="polite"></div>
+        <div class="preview-panel">
+          <h2>动作预览</h2>
+          <p>直接查看动作；预览结束后会恢复原先状态。</p>
+          <label for="idle-preview">角色动作</label>
+          <div class="preview-inline">
+            <select id="idle-preview"></select>
+            <button type="button" data-preview="idle">播放动作</button>
+          </div>
+          <div class="preview-buttons">
+            <button type="button" data-preview="mask" id="preview-mask">戴上／摘下面具</button>
+            <button type="button" data-preview="performance">演奏预览</button>
+          </div>
+          <button type="button" class="preview-stop" data-preview="stop" disabled>停止预览</button>
+          <div id="preview-status" role="status" aria-live="polite">选择动作即可预览。</div>
+        </div>
+      </div>
+      <div class="settings-section" id="page-dual" hidden>
+        <div class="section-kicker">DUO</div>
+        <h1>双人设置</h1>
+        <p class="intro">左边的设置对应左侧人物，右边的设置对应右侧人物。</p>
+        <label class="setting-row dual-enable"><span><strong>开启双人模式</strong><small>同时显示两人，拖动任意一人可一起移动</small></span><input type="checkbox" data-key="dualEnabled"></label>
+        <div class="dual-grid">
+          <section class="dual-card" data-dual-slot="left" aria-labelledby="dual-left-title">
+            <div class="dual-position">LEFT</div><h2 id="dual-left-title">左侧角色</h2>
+            <div class="field-block"><label class="field-title" for="dual-left-character">人物</label><select id="dual-left-character" data-profile-key="character"></select></div>
+            <div class="field-block"><label class="field-title" for="dual-left-outfit">服装</label><select id="dual-left-outfit" data-profile-key="outfit"></select></div>
+            <label class="setting-row"><span><strong>平时佩戴面具</strong><small>当前服装支持时可开启</small></span><input type="checkbox" data-profile-key="maskOn"></label>
+            <label class="setting-row"><span><strong>演奏时佩戴面具</strong><small>仅支持 Ave Mujica 角色</small></span><input type="checkbox" data-profile-key="performanceMask"></label>
+            <p class="hint dual-performance-hint"></p><div class="hint dual-profile-status" role="status" aria-live="polite"></div>
+          </section>
+          <section class="dual-card" data-dual-slot="right" aria-labelledby="dual-right-title">
+            <div class="dual-position">RIGHT</div><h2 id="dual-right-title">右侧角色</h2>
+            <div class="field-block"><label class="field-title" for="dual-right-character">人物</label><select id="dual-right-character" data-profile-key="character"></select></div>
+            <div class="field-block"><label class="field-title" for="dual-right-outfit">服装</label><select id="dual-right-outfit" data-profile-key="outfit"></select></div>
+            <label class="setting-row"><span><strong>平时佩戴面具</strong><small>当前服装支持时可开启</small></span><input type="checkbox" data-profile-key="maskOn"></label>
+            <label class="setting-row"><span><strong>演奏时佩戴面具</strong><small>仅支持 Ave Mujica 角色</small></span><input type="checkbox" data-profile-key="performanceMask"></label>
+            <p class="hint dual-performance-hint"></p><div class="hint dual-profile-status" role="status" aria-live="polite"></div>
+          </section>
+        </div>
+        <p class="hint">双人模式停用目光追随鼠标；《春日影》按普通音乐演出处理。关闭后恢复单人角色与原有视线设置。</p>
+        <p class="hint">动作预览请前往“角色设置”，在那里选择左侧或右侧角色查看。</p>
+      </div>
+      <div class="settings-section" id="page-system" hidden>
+        <div class="section-kicker">SYSTEM</div>
+        <h1>系统设置</h1>
+        <p class="intro">调整桌宠大小、视线与台词。</p>
+        <div class="setting-row size-row"><label for="size-slider"><strong>桌宠大小</strong><small>拖动立即调整</small></label><input id="size-slider" type="range" min="60" max="180" step="5" data-key="sizePercent"><output id="size-value" for="size-slider">100%</output></div>
+        <label class="setting-row"><span><strong>睁眼</strong><small>关闭后保持闭眼</small></span><input type="checkbox" data-key="eyesOpen"></label>
+        <label class="setting-row"><span><strong>视线追随鼠标</strong><small id="follow-mouse-hint">演奏和待机动作时暂时停用</small></span><input type="checkbox" data-key="followMouse"></label>
+        <label class="setting-row"><span><strong>显示台词气泡</strong><small>点击人物时显示台词</small></span><input type="checkbox" data-key="showLines"></label>
+        <label class="setting-row"><span><strong>播放日语配音</strong><small>点击人物时播放原声</small></span><input type="checkbox" data-key="voiceEnabled"></label>
+        <div class="setting-row size-row"><label for="voice-volume"><strong>桌宠音量</strong><small>相对系统当前音量，不改变系统音量</small></label><input id="voice-volume" type="range" min="0" max="100" step="1" data-key="voiceVolume"><output id="voice-volume-value" for="voice-volume">45%</output></div>
+        <label class="setting-row"><span><strong>台词语言</strong><small>来自角色资料页</small></span><select data-key="language"><option value="zh">简体中文</option><option value="ja">日本語</option></select></label>
+        <h2 class="subheading">日常问候</h2>
+        <label class="setting-row"><span><strong>早安、午安与晚安</strong><small>每个时段最多问候一次</small></span><input type="checkbox" data-key="greetingsEnabled"></label>
+        <label class="setting-row"><span><strong>整点报时</strong><small>用文字提醒当前时间</small></span><input type="checkbox" data-key="hourlyChime"></label>
+        <div class="quiet-hours"><label>免打扰开始 <input type="time" data-key="quietStart"></label><label>免打扰结束 <input type="time" data-key="quietEnd"></label></div>
+        <p class="hint">演奏和《春日影》播放时不会主动问候。</p>
+      </div>
+      <button id="done" class="done-button">完成</button>
+    </section>
+  </main>
+  <script src="/character-settings.js"></script>
+  <script>for (const id of ['workshop-button','empty-library-import']) document.getElementById(id).onclick = () => window.petAPI.openWorkshop();</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+# Large character resources and portable applications are release attachments.
+# Local originals remain on disk, outside the source-only Git history.
+/内置角色资料/
+/deskpet-plus/desktop-pet/
+/deskpet-plus/start-framework.cmd
+/deskpet-plus/启动程序.cmd
+**/node_modules/
+**/data/
+/deskpet-plus/app/character-resources/
+**/dist/
+**/backups/
+**/verification/
+/发布文件/
+**/.env
+**/.env.*
+*.log
+*.asar
+*.asar.*
+*.zip
+
+# Also exclude built-in resources if someone puts them back into the source tree.
+/deskpet-plus/app/public/characters.json
+/deskpet-plus/app/public/characters/
+/deskpet-plus/app/public/interaction-data.json
+/deskpet-plus/app/public/interaction-voice/
+/deskpet-plus/app/public/model/
+/deskpet-plus/app/public/models/
+/deskpet-plus/app/public/voice/
+/deskpet-plus/app/public/lines.json
+/deskpet-plus/app/public/image-lab/builtin.js
